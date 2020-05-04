@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <form th:action="@{/validar}" method="post" th:object="${product}">
+    <label for="">Product</label>
+    <th>
+        <select th:field="*{id}">
+            <option th:each="p : ${products}" th:value="${p.id}" th:text="${p.nombre}"></option>
+
+
+        </select>
+
+
+    </th>
+    
+    <input type="number" th:field="*{cantidad}">
+    <br>
+    <input type="submit" value="enviar">
+    
+    </form>
+
+
+</body>
+</html>
